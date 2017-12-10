@@ -7,10 +7,30 @@
     "react-dom": "^16.2.0",
     "react-scripts": "1.0.17"
   },
+  "devDependencies": {
+    "eslint-plugin-prettier": "^2.3.1",
+    "prettier": "^1.9.1"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format": "prettier --trailing-comma es5 --single-quote --write 'src/*.js' 'src/**/*.js'"
+  },
+  "eslintConfig": {
+    "extends": "react-app",
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "singleQuote": true,
+          "trailingComma": "es5"
+        }
+      ]
+    }
   }
 }
